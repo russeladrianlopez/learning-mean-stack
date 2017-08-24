@@ -14,6 +14,10 @@ const mongoURL = 'mongodb://localhost/meandb';
 mongoose.connect(mongoURL);
 
 // Routing
+router.get('/', (request, response) => {
+ response.status(200).send({message: 'Hello World!'});
+});
+app.use(router);
 
 // Configure port
 const port = 8080;

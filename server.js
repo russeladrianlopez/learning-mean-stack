@@ -13,8 +13,11 @@ const mongoURL = 'mongodb://localhost/meandb';
 
 mongoose.connect(mongoURL);
 
+// Serve static files
+app.use(express.static('public'));
+
 // Routing
-router.get('/', (request, response) => {
+router.get('/api', (request, response) => {
  response.status(200).send({message: 'Hello World!'});
 });
 app.use(router);
